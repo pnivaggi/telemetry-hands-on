@@ -1,0 +1,14 @@
+# # config file version
+apiVersion: 1
+
+providers:
+ - name: 'main'
+   orgId: 1
+   editable: true
+   type: file
+   options:
+     path: /etc/grafana/provisioning/dashboards
+     # The following feature could've been used to 
+     # deduce the folder structure. However, it 
+     # triggers errors
+     foldersFromFilesStructure: true
