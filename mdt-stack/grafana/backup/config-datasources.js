@@ -1,1 +1,0 @@
-{ "name": "InfluxDB", "type": "influxdb", "access": "proxy", "url": "http://influxdb:8086", "password": "admin", "user": "admin", "database": "telemetry", "basicAuth": false, "basicAuthUser": "", "basicAuthPassword": "", "withCredentials": false, "isDefault": false, "jsonData": { }, "tlsAuth": { "tlsCACertSet": false, "tlsClientCertSet": false, "tlsClientKeySet": false } }
