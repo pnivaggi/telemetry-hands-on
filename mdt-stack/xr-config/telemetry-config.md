@@ -21,7 +21,6 @@ telemetry model-driven
  sensor-group pcc
   sensor-path Cisco-IOS-XR-infra-xtc-agent-oper:xtc/policy-summary
   sensor-path Cisco-IOS-XR-infra-xtc-agent-oper:xtc/topology-summaries/topology-summary
-  sensor-path Cisco-IOS-XR-infra-statsd-oper:infra-statistics/interfaces/interface/latest/generic-counters
  !
  sensor-group optics
   sensor-path Cisco-IOS-XR-controller-optics-oper:optics-oper/optics-ports/optics-port/optics-info
@@ -39,6 +38,7 @@ telemetry model-driven
  sensor-group interface
   sensor-path openconfig-interfaces:interfaces/interface/state
   sensor-path Cisco-IOS-XR-infra-statsd-oper:infra-statistics/interfaces/interface/data-rate
+  sensor-path Cisco-IOS-XR-infra-statsd-oper:infra-statistics/interfaces/interface/latest/generic-counters
  !
  subscription pcc
   sensor-group-id pcc sample-interval 10000

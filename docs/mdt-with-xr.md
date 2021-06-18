@@ -1,11 +1,12 @@
 
-# MDT practical with Cisco IOS-XR
+# MDT with Cisco IOS-XR
 
-- [MDT practical with Cisco IOS-XR](#mdt-practical-with-cisco-ios-xr)
+- [MDT with Cisco IOS-XR](#mdt-with-cisco-ios-xr)
   - [IOS-XR Router Configuration](#ios-xr-router-configuration)
     - [MDT Configuration Options](#mdt-configuration-options)
     - [Define a Subscription to Stream Data from Router to Receiver](#define-a-subscription-to-stream-data-from-router-to-receiver)
     - [Verify Deployment of the Subscription](#verify-deployment-of-the-subscription)
+  - [MDT Sensor-path examples](#mdt-sensor-path-examples)
 
 ## IOS-XR Router Configuration
 
@@ -184,4 +185,57 @@ Subscription:  example
     Last Collection Start:2021-06-14 11:37:46.1230110848 +0000
     Last Collection End:  2021-06-14 11:37:46.1230169636 +0000
     Sensor Path:          openconfig-interfaces:interfaces/interface/state
+```
+
+## MDT Sensor-path examples
+
+Device Health Monitoring
+
+ ```
+ sensor-group system
+  sensor-path Cisco-IOS-XR-wdsysmon-fd-oper:system-monitoring/cpu-utilization
+  sensor-path Cisco-IOS-XR-nto-misc-oper:memory-summary/nodes/node/summary
+ ```
+
+Interface
+
+ ```
+ sensor-group interface
+  sensor-path openconfig-interfaces:interfaces/interface/state
+  sensor-path Cisco-IOS-XR-infra-statsd-oper:infra-statistics/interfaces/interface/data-rate
+  sensor-path Cisco-IOS-XR-infra-statsd-oper:infra-statistics/interfaces/interface/latest/generic-counters
+ ```
+
+SFP/Optics Monitoring
+
+ ```
+ sensor-group optics
+  sensor-path Cisco-IOS-XR-controller-optics-oper:optics-oper/optics-ports/optics-port/optics-info
+ ```
+
+ISIS and BGP Monitoring
+
+ ```
+ sensor-group routing
+  sensor-path Cisco-IOS-XR-clns-isis-oper:isis/instances/instance/statistics-global
+  sensor-path Cisco-IOS-XR-clns-isis-oper:isis/instances/instance/levels/level/adjacencies/adjacency
+  sensor-path Cisco-IOS-XR-ipv4-bgp-oper:bgp/instances/instance/instance-active/default-vrf/process-info
+  sensor-path Cisco-IOS-XR-ip-rib-ipv4-oper:rib/vrfs/vrf/afs/af/safs/saf/ip-rib-route-table-names/ip-rib-route-table-name/protocol/isis/as/information
+```
+
+SRTE Monitoring on PCC Routers
+
+```
+ sensor-group pcc
+  sensor-path Cisco-IOS-XR-infra-xtc-agent-oper:xtc/policy-summary
+  sensor-path Cisco-IOS-XR-infra-xtc-agent-oper:xtc/topology-summaries/topology-summary
+```
+
+SRTE Monitoring on SRPCE
+
+```
+ sensor-group pce
+  sensor-path Cisco-IOS-XR-infra-xtc-oper:pce-lsp-data/lsp-summary
+  sensor-path Cisco-IOS-XR-infra-xtc-oper:pce-lsp-data/tunnel-detail-infos
+  sensor-path Cisco-IOS-XR-infra-xtc-oper:pce-topology/topology-summaries/topology-summary
 ```
