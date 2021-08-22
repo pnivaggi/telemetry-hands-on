@@ -10,8 +10,8 @@ We are using the following set of Docker containers:
 
 The collector listens on port specified in the configuration files for incoming connections. IOS XR will initiate the connection, dialling out to the collector. After the connection establishment, the device will begin to stream data over gRPC to the collector which will send it to a database named telemetry.
 
-NOTE - Please refer to the following references for details about the three components and the ingestion of telemetry data:
+Please refer to the following references for details about the three components and the ingestion of telemetry data:
 
-InfluxData
-Input plugin for Model-driven telemetry over gRPC
-Input plugin for Model-driven telemetry over gNMI
+[InfluxData](https://www.influxdata.com/)
+- [Input plugin for Model-driven telemetry over gRPC](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/cisco_telemetry_mdt)  
+- [Input plugin for Model-driven telemetry over gNMI](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/gnmi)
