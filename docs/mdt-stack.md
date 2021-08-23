@@ -12,6 +12,6 @@ The collector listens on port specified in the configuration files for incoming 
 
 Please refer to the following references for details about the three components and the ingestion of telemetry data:
 
-[InfluxData](https://www.influxdata.com/)
+- [InfluxData](https://www.influxdata.com/)
 - [Input plugin for Model-driven telemetry over gRPC](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/cisco_telemetry_mdt)  
 - [Input plugin for Model-driven telemetry over gNMI](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/gnmi)
